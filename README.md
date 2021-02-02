@@ -69,16 +69,17 @@ implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.2.1'
 
 <div style="text-align: center"><table><tr>
   <td style="text-align: center">
-    <img src="https://user-images.githubusercontent.com/28584213/106650821-b4767180-65d6-11eb-9f23-8065701de29b.png" width="200"/>
+    <img src="https://user-images.githubusercontent.com/28584213/106650821-b4767180-65d6-11eb-9f23-8065701de29b.png" width="300"/>
 </td>
   <td style="text-align: center">
-    <img src="https://user-images.githubusercontent.com/28584213/106650964-dcfe6b80-65d6-11eb-985d-6ca55c0d974d.png" width="200"/>
-</td>
-  <td style="text-align: center">
-<img src="https://user-images.githubusercontent.com/28584213/106651094-061efc00-65d7-11eb-8170-6b8efdd3ae26.png" width="200"/>
-</td>
-<td style="text-align: center">
-<img src="https://user-images.githubusercontent.com/28584213/106651065-fdc6c100-65d6-11eb-8b42-d6817c301e72.png" width="200"/>
+    <img src="https://user-images.githubusercontent.com/28584213/106650964-dcfe6b80-65d6-11eb-985d-6ca55c0d974d.png" width="300"/>
 </td>
 </tr></table></div>
+<div style="text-align: center"><table><tr>
+  <td style="text-align: center">
+<img src="https://user-images.githubusercontent.com/28584213/106651094-061efc00-65d7-11eb-8170-6b8efdd3ae26.png" width="300"/>
+</td>
+<td style="text-align: center">
+<img src="https://user-images.githubusercontent.com/28584213/106651065-fdc6c100-65d6-11eb-8b42-d6817c301e72.png" width="300"/>
+</td></tr></table></div>
 
