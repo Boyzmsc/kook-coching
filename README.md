@@ -1,6 +1,5 @@
 # Kook Coching
 
-
 ## App Info
 
 ### Version
@@ -54,18 +53,147 @@ implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.2.1'
 
 
 
-## Function
+## App Structure
 
-* App Structure (앱 구조)
-* Login, Register (로그인, 회원가입)
+**본 프로젝트의 중심화면을 4개의 Fragment로 구성**
+
 * Home (홈)
-* White Board (글쓰기)
-* Board (게시판)
-* Post View (글)
+* ShardBoard (지식 공유 게시판)
+* MajorBoard (전공수업 지식 공유 게시판)
+* Project (프로젝트원 모집 게시판)
 
 
 
-## Run Screen
+**사용 위젯**
+
+* 화면 전환을 위해 Bottom navigation view 사용
+* 좌우 Scrolling이 가능한 ViewPager 사용
+
+
+
+### 1. Intro
+
+<img src="https://user-images.githubusercontent.com/28584275/99692150-5228cd00-2acd-11eb-8762-86453bed107d.jpg" width="300" float="left">
+
+
+
+### 2. Login, Register Screen
+
+**로그인**
+
+* 이메일과 비밀번호를 입력하여 앱에 로그인 
+* 등록된 사용자인 경우 : MainActivity로 이동
+* 등록되지 않은 사용자인 경우 : "등록된 사용자가 아닙니다"를 Toast로 출력
+
+<img src="https://user-images.githubusercontent.com/28584258/99769148-3e22b100-2b49-11eb-9cf0-b99f6516cb00.png" alt="99639465-fb020880-2a8a-11eb-8e22-e786385bc6d6" width="300" float="left" />
+
+
+
+**회원가입**
+
+* 앱에서 사용할 이메일, 비밀번호, 닉네임을 설정하고 등록
+
+<img src="https://user-images.githubusercontent.com/28584258/99769153-3f53de00-2b49-11eb-98a6-aa268f87a5e3.png" alt="99639606-28e74d00-2a8b-11eb-934e-84d4186e1361" width="300" float="left" />
+
+
+
+**비밀번호 찾기**
+
+* 등록된 이메일로 비밀번호를 재설정 할 수 있는 메일을 보내 새로운 비밀번호 등록
+* 등록된 이메일인 경우 : 재설정 메일 전송
+* 등록되지 않은 이메일인 경우 : "이메일을 확인해주세요"를 Toast로 출력
+
+<img src="https://user-images.githubusercontent.com/28584258/99769263-66121480-2b49-11eb-98fc-ef95ab3e67c3.png" alt="99639682-40bed100-2a8b-11eb-86e6-969fa896e470" width="300" float="left" />
+
+
+
+### 3. Home Screen
+
+**텍스트 슬롯 머신**
+
+* 앱, 웹, 알고리즘, 전공 4개의 단어 중 한 개가 랜덤으로 선택되는 슬롯 머신
+* FrameLayout과 TextView의 animate() 사용
+
+
+
+**프로그래밍 언어 랭킹 슬라이더**
+
+* 많이 사용되는 1~10위까지의 프로그래밍 언어와 정보를 보여주는 슬라이더
+* ViewPager, setCurrentItem, handler를 사용하여 슬라이더 제작
+* 프로그래밍 언어 순위 정보 크롤링 (참조: https://www.tiobe.com/tiobe-index/)
+
+<img src="https://user-images.githubusercontent.com/28584258/99650504-d90f8280-2a98-11eb-8f3d-d6087e3e2828.gif" alt="2020-11-19 18-42-55 (1)" width="800" float="left" />
+
+
+
+**내 정보**
+
+* 사용자의 닉네임, 이메일, 내가 쓴 글, 내가 찜한 글, 내가 좋아한 글 확인 및 회원탈퇴
+  * 내가 쓴 글: 사용자가 작성한 글 목록 확인
+  * 내가 찜한 글: 사용자가 찜한 글 목록 확인
+  * 내가 좋아한 글: 사용자가 좋아한 글 목록 확인
+  * 회원탈퇴: 사용자의 이메일, 닉네임, 비밀번호 정보를 삭제
+
+<div style="text-align: center"><table><tr>
+  <td style="text-align: center">
+    <img src="https://user-images.githubusercontent.com/28584258/99639812-706dd900-2a8b-11eb-900a-12b2addd98fc.png" width="300"/>
+</td>
+  <td style="text-align: center">
+    <img src="https://user-images.githubusercontent.com/28584258/99639914-97c4a600-2a8b-11eb-9631-d967af503e26.png" width="300"/>
+</td>
+</tr></table></div>
+
+
+
+### 4. WhiteBoard Screen
+
+**사진 등록**
+
+* 세가지의 단계를 걸쳐 게시글에 이미지 업로드
+
+  1. 기기의 카메라, 앨범 등에 관한 권한 허가
+  2. 선택된 이미지를 Firestorage에 저장 
+  3. Firestorage에 저장된 이미지의 url을 Firestore에 저장
+
+<div style="text-align: center"><table><tr>
+  <td style="text-align: center">
+    <img src="https://user-images.githubusercontent.com/28584258/99769452-b4271800-2b49-11eb-91a7-cc5f7efd3e3b.png" width="300"/>
+</td>
+  <td style="text-align: center">
+    <img src="https://user-images.githubusercontent.com/28584258/99769454-b4bfae80-2b49-11eb-80d6-bd8ed2357698.png" width="300"/>
+</td>
+</tr></table></div>
+
+
+
+**태그**
+
+* 각각의 게시글을 분류
+* ChipGroup을 활용한  Chip을 동적으로 생성하여 기본적인 태그 기능 구현
+* 태그 위 사진은 업로드 한 이미지를 확인하기 위해 구현
+
+<img src="https://user-images.githubusercontent.com/28584258/99642764-31da1d80-2a8f-11eb-8daa-de81d19f468f.png" alt="Screenshot_1605773721" width="500" float="left" />
+
+
+
+### 5. PostView Screen
+
+<div style="text-align: center"><table><tr>
+  <td style="text-align: center">
+    <img src="https://user-images.githubusercontent.com/28584275/99692543-c3688000-2acd-11eb-9292-b03d42ff22f3.jpg" width="300"/>
+</td>
+  <td style="text-align: center">
+    <img src="https://user-images.githubusercontent.com/28584275/99692772-01fe3a80-2ace-11eb-9646-0565fe04caa4.jpg" width="300"/>
+</td>
+</tr></table></div>
+
+
+
+### 6. Board Screen
+
+**저장된 게시글 정보 불러오기**
+
+* Firestore에 저장되어 있는 데이터를 가져옴
 
 <div style="text-align: center"><table><tr>
   <td style="text-align: center">
@@ -85,3 +213,25 @@ implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.2.1'
 
 
 
+### 7. PostView Screen
+
+**좋아요, 찜**
+
+* ImageButton을 사용하여 좋아요, 찜 버튼 생성
+* 버튼 클릭 시 Firestore에 해당 사용자의 uid를 추가, 색 변경
+* 한번 더 클릭 시 해당 사용자의 uid 삭제, 원색으로 변경
+
+![Screenshot_1605773737](https://user-images.githubusercontent.com/28584258/99640655-8af48200-2a8c-11eb-8764-8807b03d4cff.png)
+![Screenshot_1605773734](https://user-images.githubusercontent.com/28584258/99640661-8cbe4580-2a8c-11eb-8d76-7654b631d276.png)
+
+
+
+**이미지 보기**
+
+* Firestore에 저장되어 있는 Image 출력
+
+* Glider library를 사용해 image url을 ImageView의 src로 설정
+
+* 저장된 이미지의 개수에 맞게 ImageView 동적 생성
+
+  <img src="https://user-images.githubusercontent.com/28584258/99640334-16214800-2a8c-11eb-97c3-6529df90418d.png" alt="Screenshot_1605773743" width="350" float="left" />
