@@ -129,10 +129,10 @@ implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.2.1'
 **내 정보**
 
 * 사용자의 닉네임, 이메일, 내가 쓴 글, 내가 찜한 글, 내가 좋아한 글 확인 및 회원탈퇴
-  * 내가 쓴 글: 사용자가 작성한 글 목록 확인
-  * 내가 찜한 글: 사용자가 찜한 글 목록 확인
-  * 내가 좋아한 글: 사용자가 좋아한 글 목록 확인
-  * 회원탈퇴: 사용자의 이메일, 닉네임, 비밀번호 정보를 삭제
+* 내가 쓴 글 : 사용자가 작성한 글 목록 확인
+* 내가 찜한 글 : 사용자가 찜한 글 목록 확인
+* 내가 좋아한 글 : 사용자가 좋아한 글 목록 확인
+* 회원탈퇴 : 사용자의 이메일, 닉네임, 비밀번호 정보를 삭제
 
 <div style="text-align: center"><table><tr>
   <td style="text-align: center">
@@ -151,9 +151,9 @@ implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.2.1'
 
 * 세가지의 단계를 걸쳐 게시글에 이미지 업로드
 
-  1. 기기의 카메라, 앨범 등에 관한 권한 허가
-  2. 선택된 이미지를 Firestorage에 저장 
-  3. Firestorage에 저장된 이미지의 url을 Firestore에 저장
+1. 기기의 카메라, 앨범 등에 관한 권한 허가
+2. 선택된 이미지를 Firestorage에 저장 
+3. Firestorage에 저장된 이미지의 url을 Firestore에 저장
 
 <div style="text-align: center"><table><tr>
   <td style="text-align: center">
@@ -221,9 +221,13 @@ implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.2.1'
 * 버튼 클릭 시 Firestore에 해당 사용자의 uid를 추가, 색 변경
 * 한번 더 클릭 시 해당 사용자의 uid 삭제, 원색으로 변경
 
-![Screenshot_1605773737](https://user-images.githubusercontent.com/28584258/99640655-8af48200-2a8c-11eb-8764-8807b03d4cff.png)
-![Screenshot_1605773734](https://user-images.githubusercontent.com/28584258/99640661-8cbe4580-2a8c-11eb-8d76-7654b631d276.png)
-
+<div style="text-align: left"><table><tr><td style="text-align: left">
+  <img src="https://user-images.githubusercontent.com/28584258/99640655-8af48200-2a8c-11eb-8764-8807b03d4cff.png" width="300"/></td></tr>
+  <tr>
+  <td style="text-align: left">
+    <img src="https://user-images.githubusercontent.com/28584258/99640661-8cbe4580-2a8c-11eb-8d76-7654b631d276.png" width="300"/>
+</td>
+</tr></table></div>
 
 
 **이미지 보기**
@@ -234,4 +238,4 @@ implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.2.1'
 
 * 저장된 이미지의 개수에 맞게 ImageView 동적 생성
 
-  <img src="https://user-images.githubusercontent.com/28584258/99640334-16214800-2a8c-11eb-97c3-6529df90418d.png" alt="Screenshot_1605773743" width="350" float="left" />
+  <img src="https://user-images.githubusercontent.com/28584258/99640334-16214800-2a8c-11eb-97c3-6529df90418d.png" alt="Screenshot_1605773743" width="300" float="left" />
